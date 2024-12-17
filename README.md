@@ -26,4 +26,14 @@ If you would like to test registering a user, try :
     curl -X POST http://127.0.0.1:5000/api/users/register \
     -H "Content-Type: application/json" \
     -d '{"name": "Maria Doe", "email": "mariadoe@example.com", "password": "testingtesting123"}' 
+## Available Routes
+| Route            | Description                                         |
+|-------------------|-----------------------------------------------------|
+| `/`              | Default route, leads to the homepage of the mock user. |
+| `/login`         | Access the login page.                              |
+| `/create-account`| Access the account creation page.                   |
+| `/messaging`     | Full-page chat interface. The main goal is to integrate the real message system with the main application. |
+
+## Project Demo and Presentation
+You can find the presentation demo video [here](https://drive.google.com/file/d/1aztAbQ8bP18Q-oGTWSjKHIhC51_PBfYu/view?usp=share_link) _(accessible only to LionMail user)_. This project is part of the User Interface Design course (Fall 2024), led by Prof. Brian Smith. We would like to sincerely acknowledge the guidance and support provided by Prof. Smith and all the TAs throughout the semester.
 
