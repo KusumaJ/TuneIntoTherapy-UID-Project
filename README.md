@@ -1,14 +1,28 @@
-### Chekpoint 5
-you may have to `npm install` to install the required dependencies
-To run the project please download this code and use `cd app` then `npm start`<br />
-Since we aim for mobile web applcation, we are using the functionality fo google chrome. 
-Please try this out on chrome, inspect element (press Ctrl+Shift+I on Windows/Linux or Cmd+Option+I on Mac), and use the dimension of iphone XR. <br /><br />
-<img width="1469" alt="image" src="https://github.com/user-attachments/assets/7b91f587-28c0-4bde-81ed-dcc50ecb6250"><br />
-We will improve the overall quality before the deadline.
+## Getting Started
 
-To start Flask server use `flask run` 
+### Backend Setup
+1. Open a terminal and navigate to the backend directory if needed.
+2. Install the required Python dependencies: `pip install -U flask-sqlalchemy flask-cors`
+3. Start the flask server `flask run`
 
-if you would like to test registering a user, try :
+### Frontend Setup
+1. Open another terminal and navigate to the backend directory if needed.
+2. Install the required dependencies `npm install`
+3. Start the react server `npm start`
+
+## Testing the applcation
+Browser: Use Google Chrome for testing.
+Mobile View:
+1. Open the application in Chrome.
+2. Press Ctrl+Shift+I (Windows/Linux) or Cmd+Option+I (Mac) to open the Inspect Element panel.
+3. Click on the Device Toolbar (mobile icon in the top left corner).
+4. Select iPhone XR from the list of device options.
+
+### Expected View
+<img width="1467" alt="image" src="https://github.com/user-attachments/assets/105b3e07-edbe-4d64-848f-b4ccce6ad6e5" />
+
+### Note
+If you would like to test registering a user, try :
     curl -X POST http://127.0.0.1:5000/api/users/register \
     -H "Content-Type: application/json" \
     -d '{"name": "Maria Doe", "email": "mariadoe@example.com", "password": "testingtesting123"}' 
