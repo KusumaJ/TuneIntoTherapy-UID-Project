@@ -25,7 +25,7 @@ function ChatMessage({ message }) {
       if (message.link) {
         return (
             <div className={`message ${message.sender}`}>
-                {message.text}
+                {message.text.replace(/(\*{1,2}|_)/g, "")}
                 <span className="message-link" data-href={message.link} onClick={handleClick}> {message.linkText} </span>
             </div>
         );

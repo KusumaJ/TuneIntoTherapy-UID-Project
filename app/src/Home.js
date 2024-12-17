@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import podcast1 from './img/podcast-1.png';
-import podcast2 from './img/podcast-2.png';
-import podcast3 from './img/podcast-3.png';
 import Chatbot from './Chatbot';
+import { Link } from "react-router-dom";
 
-const podcastImages = [podcast1, podcast2, podcast3];
+const productivity = ["https://notability.com/","https://pomofocus.io/","https://www.forestapp.cc/"]
+const podcast = ["https://soundcloud.com/sparkyourcreativepodcast/episode-50-its-never-too-late-pursuing-a-musical-passion-over-40","https://www.audible.com/podcast/Pod-Save-the-World/B08JJMVJ6W","https://open.spotify.com/show/53QfpH4TQfckU74vOqvfbL"]
 
 function Home() {
     const [users, setUsers] = useState([]);
@@ -93,13 +92,15 @@ function Home() {
                 <div className="resource-category" id="productivity">
                     <h4>Productivity</h4>
                     <div className="row">
-                        {["productivity-1", "productivity-2", "productivity-3"].map((img, index) => (
+                        {productivity.map((url, index) => (
                             <span key={index}>
-                                <img
-                                    className="resource-card"
-                                    src={require(`./img/${img}.png`)}
-                                    alt={`Productivity Resource ${index + 1}`}
-                                />
+                                <Link to={`${url}`}>
+                                    <img
+                                        className="resource-card"
+                                        src={require(`./img/productivity-${index+1}.png`)}
+                                        alt={`Productivity Resource ${index + 1}`}
+                                    />
+                                </Link>
                             </span>
                         ))}
                     </div>
@@ -107,15 +108,17 @@ function Home() {
                 <div className="resource-category" id="podcast">
                     <h4>Podcast</h4>
                     <div className="row">
-                        {podcastImages.map((src, index) => (
+                        {podcast.map((url, index) => (
                             <span key={index}>
-                                <img
-                                    className="resource-card"
-                                    src={src}
-                                    alt={`Podcast Resource ${index + 1}`}
-                                />
+                                <Link to={`${url}`}>
+                                    <img
+                                        className="resource-card"
+                                        src={require(`./img/podcast-${index+1}.png`)}
+                                        alt={`Productivity Resource ${index + 1}`}
+                                    />
+                                </Link>
                             </span>
-                        ))}
+                        ))} 
                     </div>
                 </div>
             </div>

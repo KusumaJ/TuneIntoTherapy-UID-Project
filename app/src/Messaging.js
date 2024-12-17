@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import './Messaging.css';
 import { ChatContext } from './ChatContext';
+import ReactMarkdown from 'react-markdown';
 
 function Messaging() {
     const { chatMessages } = useContext(ChatContext);
@@ -29,7 +30,8 @@ function Messaging() {
                     key={index} 
                     className={`message-item ${
                         message.sender === 'user' ? 'user-message' : 'other-message'}`}>
-                    {message.fullMessage || message.text}
+                    {/* {message.fullMessage || message.text} */}
+                    <ReactMarkdown>{message.fullMessage || message.text}</ReactMarkdown>
                 </div>
             ))}
         </div>
